@@ -13,11 +13,16 @@ export default {
     { file: pkg.module, format: "es" },
   ],
   plugins: [
-    resolve(),
+    resolve({
+      extensions: [ '.mjs', '.js', '.json', '.node', '.ts' ],
+      browser: true,
+      include: 'src/**/*'
+    }),
     commonjs(),
     babel({
-      babelHelpers: "runtime",
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      babelHelpers: 'runtime',
+      include: 'src/**/*',
+      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', 'tsx', '.vue']
     }),
   ],
 };
