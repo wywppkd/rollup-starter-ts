@@ -1,11 +1,6 @@
-import sleep from "./utils/sleep";
+import add from "./utils/add";
 
-console.log("🚀 ~ file: main.ts ~ line 4 ~ sleep()", sleep())
-
-const obj = {
-  fn() {},
-};
-
-console.log("🚀 ~ file: main.js ~ line 6 ~ obj?.fn()", obj?.fn());
+const total = add(2, 222);
+console.log(total, "total")
 
 export default (a: number, b: number) => a + b;

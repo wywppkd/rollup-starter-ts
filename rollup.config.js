@@ -9,20 +9,20 @@ import pkg from "./package.json";
 export default {
   input: "src/main.ts",
   output: [
-    { file: pkg.main, format: "cjs" },
-    { file: pkg.module, format: "es" },
+    { file: pkg.main, format: "cjs", exports: "auto" },
+    { file: pkg.module, format: "es", exports: 'auto'},
   ],
   plugins: [
     resolve({
-      extensions: [ '.mjs', '.js', '.json', '.node', '.ts' ],
+      extensions: [".mjs", ".js", ".json", ".node", ".ts", "tsx", ".vue"],
       browser: true,
-      include: 'src/**/*'
+      include: "src/**/*",
     }),
     commonjs(),
     babel({
-      babelHelpers: 'runtime',
-      include: 'src/**/*',
-      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', 'tsx', '.vue']
+      babelHelpers: "runtime",
+      include: "src/**/*",
+      extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", "tsx", ".vue"],
     }),
   ],
 };
