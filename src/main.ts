@@ -1,3 +1,3 @@
-import add from "./utils/add";
+import add from './utils/add';
 
-export default add
+export default add;

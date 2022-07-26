@@ -6,22 +6,22 @@
     "lib": ["ESNext", "DOM"],
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true, // 允许默认导入(即使目标模块没有默认导出)
-      // 如: import导入package.json文件(即使它没有 export default)
+    // 如: import导入package.json文件(即使它没有 export default)
     "moduleResolution": "node", // 指定模块解析方式, 遇到import { AAA } from './aaa'该如何去找对应文件模块解
-      // node: 按照顺序寻找该文件 aaa.ts > aaa/index.ts ....
-      // classic: 值查找 aaa.ts, 没有就返回找不到
-    "forceConsistentCasingInFileNames": true,// 强制文件名大小写一致
+    // node: 按照顺序寻找该文件 aaa.ts > aaa/index.ts ....
+    // classic: 值查找 aaa.ts, 没有就返回找不到
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
     "noImplicitReturns": true, // 函数内必须有return
-    "suppressImplicitAnyIndexErrors": false,// 是否抑制隐士的any索引错误
+    "suppressImplicitAnyIndexErrors": false, // 是否抑制隐士的any索引错误
     "allowJs": true, // 允许编译js文件
-    "skipLibCheck": true,// 跳过声明文件的类型检查(减少编译时间, 牺牲准确性)
+    "skipLibCheck": true, // 跳过声明文件的类型检查(减少编译时间, 牺牲准确性)
     "experimentalDecorators": true, // 启用装饰器
-    "strict": true,// 严格模式下, ts未来版本可能引入更严格的检查, 导致出现新的类型错误
-    "resolveJsonModule": true,// 允许json文件作为模块
+    "strict": true, // 严格模式下, ts未来版本可能引入更严格的检查, 导致出现新的类型错误
+    "resolveJsonModule": true, // 允许json文件作为模块
     "removeComments": false, // 删除注释
     "declaration": true, // 生成.d.ts文件
-    "declarationDir": "./types",
+    "declarationDir": "./types"
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
