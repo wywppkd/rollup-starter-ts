@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "esnext",
-    "module": "esnext",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "importHelpers": true,
-    "declaration": true,
-    "declarationDir": "./dist",
-    "resolveJsonModule": true,
+    "outDir": "dist", // tsc编译输出目录, 默认编译后文件与源文件在同一目录
+    "module": "ESNext", // 指定输出那种模块规范(esnext-最新的ES模块规范, CommonJS...)
+    "target": "ESNext", // 指定编译ES的版本(ES5,ES6...esnext)
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true, // 允许默认导入(即使目标模块没有默认导出)
+      // 如: import导入package.json文件(即使它没有 export default)
+    "moduleResolution": "node", // 指定模块解析方式, 遇到import { AAA } from './aaa'该如何去找对应文件模块解
+      // node: 按照顺序寻找该文件 aaa.ts > aaa/index.ts ....
+      // classic: 值查找 aaa.ts, 没有就返回找不到
+    "forceConsistentCasingInFileNames": true,// 强制文件名大小写一致
+    "noImplicitReturns": true, // 函数内必须有return
+    "suppressImplicitAnyIndexErrors": false,// 是否抑制隐士的any索引错误
+    "allowJs": true, // 允许编译js文件
+    "skipLibCheck": true,// 跳过声明文件的类型检查(减少编译时间, 牺牲准确性)
+    "experimentalDecorators": true, // 启用装饰器
+    "strict": true,// 严格模式下, ts未来版本可能引入更严格的检查, 导致出现新的类型错误
+    "resolveJsonModule": true,// 允许json文件作为模块
+    "removeComments": false, // 删除注释
+    "declaration": true, // 生成.d.ts文件
+    "declarationDir": "./types",
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
 }

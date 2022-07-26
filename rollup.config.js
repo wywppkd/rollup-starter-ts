@@ -2,6 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
 import pkg from "./package.json";
+import typescript from "@rollup/plugin-typescript";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -15,10 +16,11 @@ export default {
   plugins: [
     resolve({
       extensions: [".mjs", ".js", ".json", ".node", ".ts", "tsx", ".vue"],
-      browser: true,
-      include: "src/**/*",
     }),
     commonjs(),
+    typescript({
+      tsconfig: "./tsconfig.json",
+    }),
     babel({
       babelHelpers: "runtime",
       include: "src/**/*",
