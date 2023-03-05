@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import pkg from './package.json';
 import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -25,6 +26,10 @@ export default {
       babelHelpers: 'runtime',
       include: 'src/**/*',
       extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', 'tsx', '.vue'],
+    }),
+    postcss({
+      plugins: [],
+      autoModules: true,
     }),
   ],
 };
