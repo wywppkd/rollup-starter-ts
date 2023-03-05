@@ -16,7 +16,7 @@ export default {
   ],
   plugins: [
     resolve({
-      extensions: ['.mjs', '.js', '.json', '.node', '.ts', 'tsx', '.vue'],
+      extensions: ['.js', '.mjs', '.ts', '.es', '.json', '.node', '.jsx', 'tsx', '.vue'],
     }),
     commonjs(),
     typescript({
@@ -25,7 +25,7 @@ export default {
     babel({
       babelHelpers: 'runtime',
       include: 'src/**/*',
-      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', 'tsx', '.vue'],
+      extensions: ['.js', '.mjs', '.ts', '.es', '.json', '.node', '.jsx', 'tsx', '.vue'],
     }),
     postcss({
       plugins: [],
